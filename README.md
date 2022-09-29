@@ -6,7 +6,7 @@ This project aims to create an API to control a shopping list, whether for groce
 
 # MVP
 - User Control
-- Authentication
+- <s>Authentication</s>
 - CRUD shopping list
 - Display of lists
 
@@ -17,3 +17,4 @@ This project aims to create an API to control a shopping list, whether for groce
 - Categorize the products
 - Allow to add total purchase amount
 - Allow to add product value
+  <s>Exemplo</s>
