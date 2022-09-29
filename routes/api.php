@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'index']);
 
 // Signup routes
-Route::post('/signup', [AuthenticationController::class, 'signup']);
+Route::post('signup', [AuthenticationController::class, 'signup']);
+Route::post('signin', [AuthenticationController::class, 'signin']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post('signout', [AuthenticationController::class, 'signout']);
+    Route::get('welcome', [IndexController::class, 'greetings']);
 });
