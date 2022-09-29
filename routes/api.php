@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Auth\AuthenticationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+
+// Signup routes
+Route::post('/signup', [AuthenticationController::class, 'signup']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
